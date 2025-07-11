@@ -37,7 +37,7 @@ function App() {
     setMessages((prev) => [...prev, userMessage]);
 
     try {
-      const res = await axios.post("http://localhost:5000/chat", { message: input });
+      const res = await axios.post("https://chatbot-backend-rcge.onrender.com/chat", { message: input });
       const botMessage = { sender: "Gemini", text: res.data.response };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
